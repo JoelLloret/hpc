@@ -1,6 +1,6 @@
 # Compiler
 CC=gcc
-SOURCE=heat_serial.c
+SOURCE=heat_omp.c
 EXEC=output
 
 # Flags default
