@@ -39,7 +39,7 @@ void initialize_local_grid(double *grid, int local_nx, int ny, int global_start_
 
 void exchange_halos(double *grid, int local_nx, int ny, int rank, int size)
 {
-    MPI_Request req[4];     /* up to 4 outstanding operations          */
+    MPI_Request req[4];
     int nreq = 0;
 
     // local_nx -> number of rows in the local grid
@@ -68,7 +68,6 @@ void exchange_halos(double *grid, int local_nx, int ny, int rank, int size)
 void solve_heat_equation(double *grid, double *new_grid, int steps, double r, int local_nx, int ny, int rank, int size) {
     int step, i, j;
     double *temp;
-    // MPI_Request send_request, recv_request;
 
     for (step = 0; step < steps; step++) {
         
